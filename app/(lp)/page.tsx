@@ -116,7 +116,7 @@ export default function IndexPage() {
         </div>
         <div className="flex flex-col p-1 items-center gap-4">
           <Image
-            src="/スクショ７.PNG"
+            src="/スクショ７.png"
             alt="haru"
             width={200}
             height={300}
