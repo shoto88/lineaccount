@@ -204,6 +204,36 @@ const IndexPage = () => {
                     順番予約を利用すると・・・
                   </h2>
                 </AnimatedSection>
+
+                <AnimatedSection>
+                <div className="bg-white p-4 sm:p-6 md:p-8 lg:p-10 rounded-2xl shadow-lg w-full">
+                  <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-6 lg:space-x-8 mb-4 sm:mb-6 md:mb-8 lg:mb-10">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 bg-yellow-200 rounded-full flex items-center justify-center">
+                      <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold">予約</span>
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">それまでに</h3>
+                      <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl">...</span>
+                    </div>
+                  </div>
+                  <div className="text-center space-y-2 mb-4 sm:mb-6 md:mb-8 lg:mb-10">
+                    <p className="text-base sm:text-lg md:text-3xl lg:text-4xl">待ち時間までにカフェ行こうかな！</p>
+                    <p className="text-base sm:text-lg md:text-3xl lg:text-4xl">自分のスケジュールに合わせて</p>
+                    <p className="text-base sm:text-lg md:text-3xl lg:text-4xl">病院受診ができる。</p>
+                  </div>
+                  <div className="flex justify-center space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-10 mb-4 sm:mb-6 md:mb-8 lg:mb-10">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 bg-green-200 rounded-full flex items-center justify-center">
+                      <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold">カフェ</span>
+                    </div>
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 bg-blue-200 rounded-full flex items-center justify-center">
+                      <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold">病院</span>
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-red-500 font-bold">病院での待ち時間を減らせます😊</p>
+                  </div>
+                </div>
+              </AnimatedSection>
                 
                 <AnimatedSection>
                   <div className="bg-gradient-to-r p-1 from-blue-100 to-blue-200 p-2 rounded-2xl shadow-lg w-full">
