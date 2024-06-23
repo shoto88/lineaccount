@@ -157,7 +157,7 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import { useState } from 'react';
 
-const AnimatedSection = ({ children }) => {
+const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -176,13 +176,20 @@ const AnimatedSection = ({ children }) => {
   );
 };
 
-const ImageTextItem = ({ imageSrc, altText, number, description, importantInfo }) => {
+const ImageTextItem = ({ imageSrc, altText, number, description, importantInfo }: { 
+  imageSrc: string, 
+  altText: string, 
+  number: string, 
+  description: string, 
+  importantInfo?: React.ReactNode  // Make importantInfo optional
+}) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
   const [showImportant, setShowImportant] = useState(false);
+
 
   return (
     <motion.div

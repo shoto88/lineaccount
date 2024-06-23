@@ -7,11 +7,11 @@ import { useInView } from 'react-intersection-observer';
 import Footer from "../../components/footer";
 
 
-const Circle = ({ text, index }) => {
+const Circle = ({ text, index }: { text: string, index: number }) => {
     const [ref, inView] = useInView({
       triggerOnce: true,
       threshold: 0.1,
-    });
+  });
   
     return (
       <motion.div
@@ -43,7 +43,7 @@ const Circle = ({ text, index }) => {
   };
   
 
-const AnimatedSection = ({ children }) => {
+const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -62,7 +62,7 @@ const AnimatedSection = ({ children }) => {
   );
 };
 
-const ImageTextItem = ({ imageSrc, altText, number, description, index }) => {
+const ImageTextItem = ({ imageSrc, altText, number, description, index }: { imageSrc: string, altText: string, number: string, description: string, index: number }) => {
     const [ref, inView] = useInView({
       triggerOnce: true,
       threshold: 0.1,
@@ -93,7 +93,7 @@ const ImageTextItem = ({ imageSrc, altText, number, description, index }) => {
     );
   };
   
-  const ImageTextGrid = ({ items }) => (
+  const ImageTextGrid = ({ items }: { items: { imageSrc: string, altText: string, number: string, description: string }[] }) => (
     <section className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 p-0 m-0 w-full">
       {items.map((item, index) => (
         <ImageTextItem
