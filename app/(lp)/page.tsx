@@ -199,7 +199,7 @@ const ImageTextItem = ({ imageSrc, altText, number, description, importantInfo }
       transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
       className="flex flex-col items-center p-2 gap-2 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full"
     >
-      <Image
+      <img
         src={imageSrc}
         alt={altText}
         width={200}
