@@ -111,37 +111,37 @@ const ImageTextItem = ({ imageSrc, altText, number, description, index }: { imag
 const IndexPage = () => {
     const guideItems = [
       {
-        imageSrc: "/スクショ５２.png",
+        imageSrc: "/next.svg",
         altText: "Step 1",
         number: "①",
         description: "LINEの『新規予約/予約状況』ボタンから進むと、上記画面に遷移します。オレンジの『予約する』ボタンを押してください。"
       },
       {
-        imageSrc:"/スクショ５２.png",
+        imageSrc:"/スクショ５２.PNG",
         altText: "Step 2",
         number: "②",
         description: "スクロールして、施術メニューの『このメニューを追加』ボタンを押して、『この内容で日時選択へ進む』を押してください。"
       },
       {
-        imageSrc: "/スクショ５２.png",
+        imageSrc: "/スクショ５２.PNG",
         altText: "Step 3",
         number: "③",
         description: "予約日時を選択します。カレンダー上で⭕️となっている箇所は予約が可能です。"
       },
       {
-        imageSrc: "/スクショ５２.png",
+        imageSrc: "/スクショ５２.PNG",
         altText: "Step 4",
         number: "④",
         description: "内容をご確認の上、大丈夫であれば、『上記に同意の上、予約を確定する』を押してください。"
       },
       {
-        imageSrc: "/スクショ５２.png",
+        imageSrc: "/スクショ５２.PNG",
         altText: "Step 5",
         number: "⑤",
         description: "予約が確定すると、マイページから自身の予約の確認やキャンセルが可能となります。"
       },
       {
-        imageSrc: "/スクショ５２.png",
+        imageSrc: "/スクショ５２.PNG",
         altText: "Step 6",
         number: "⑥",
         description: "予約後、LINEに確定の通知メッセージが届きます。また、施術7日前、1日前に、リマインドのメッセージが届きます。メルプ問診の記入も来院までにお願いします😊"
@@ -217,9 +217,9 @@ const IndexPage = () => {
                     </div>
                   </div>
                   <div className="text-center space-y-2 mb-4 sm:mb-6 md:mb-8 lg:mb-10">
-                    <p className="text-base sm:text-lg md:text-3xl lg:text-4xl">待ち時間までにカフェ行こうかな！</p>
-                    <p className="text-base sm:text-lg md:text-3xl lg:text-4xl">自分のスケジュールに合わせて</p>
-                    <p className="text-base sm:text-lg md:text-3xl lg:text-4xl">病院受診ができる。</p>
+                    <p className="text-base sm:text-lg md:text-3xl lg:text-2xl">待ち時間までにカフェ行こうかな！</p>
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl">自分のスケジュールに合わせて</p>
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl">病院受診ができる。</p>
                   </div>
                   <div className="flex justify-center space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-10 mb-4 sm:mb-6 md:mb-8 lg:mb-10">
                     <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 bg-green-200 rounded-full flex items-center justify-center">
