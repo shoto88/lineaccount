@@ -254,7 +254,7 @@ export default function IndexPage() {
               <div className="grid grid-cols-2 gap-2 sm:gap-4 w-full max-w-3xl mx-auto">
                 <div className="col-span-1">
                   <ImageTextItem
-                    imageSrc="/新２のコピー２.PNG"
+                    imageSrc="/スクショ６.svg"
                     altText="Step 1"
                     number="①"
                     description="下記の登録画面へ進むボタンを押すと、上記のような画面が表示されます"
