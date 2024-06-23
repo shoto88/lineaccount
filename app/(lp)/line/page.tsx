@@ -111,37 +111,37 @@ const ImageTextItem = ({ imageSrc, altText, number, description, index }: { imag
 const IndexPage = () => {
     const guideItems = [
       {
-        imageSrc: "/スクショ５２.PNG",
+        imageSrc: "/スクショ５２.png",
         altText: "Step 1",
         number: "①",
         description: "LINEの『新規予約/予約状況』ボタンから進むと、上記画面に遷移します。オレンジの『予約する』ボタンを押してください。"
       },
       {
-        imageSrc:"/スクショ５２.PNG",
+        imageSrc:"/スクショ５２.png",
         altText: "Step 2",
         number: "②",
         description: "スクロールして、施術メニューの『このメニューを追加』ボタンを押して、『この内容で日時選択へ進む』を押してください。"
       },
       {
-        imageSrc: "/スクショ５２.PNG",
+        imageSrc: "/スクショ５２.png",
         altText: "Step 3",
         number: "③",
         description: "予約日時を選択します。カレンダー上で⭕️となっている箇所は予約が可能です。"
       },
       {
-        imageSrc: "/スクショ５２.PNG",
+        imageSrc: "/スクショ５２.png",
         altText: "Step 4",
         number: "④",
         description: "内容をご確認の上、大丈夫であれば、『上記に同意の上、予約を確定する』を押してください。"
       },
       {
-        imageSrc: "/スクショ５２.PNG",
+        imageSrc: "/スクショ５２.png",
         altText: "Step 5",
         number: "⑤",
         description: "予約が確定すると、マイページから自身の予約の確認やキャンセルが可能となります。"
       },
       {
-        imageSrc: "/スクショ５２.PNG",
+        imageSrc: "/スクショ５２.png",
         altText: "Step 6",
         number: "⑥",
         description: "予約後、LINEに確定の通知メッセージが届きます。また、施術7日前、1日前に、リマインドのメッセージが届きます。メルプ問診の記入も来院までにお願いします😊"
