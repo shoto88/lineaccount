@@ -339,7 +339,7 @@ const ImageTextItem: React.FC<ImageTextItemProps> = ({
                 </p>
                 <p className="text-base sm:text-lg lg:text-xl text-gray-700">
                   LINEでの問い合わせやご質問など、<br />
-                  今まで通りのLINEのご利用も変わらずできますので、お願いします🙆‍♀️
+                  今まで通りのLINEのご利用も変わらずできますので、色々な形でご活用いただけますと嬉しいです🙆‍♀️
                 </p>
               </div>
             </div>
