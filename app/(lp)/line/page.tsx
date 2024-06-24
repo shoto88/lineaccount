@@ -87,7 +87,17 @@ const ImageTextItem = ({ imageSrc, altText, number, description, index }: { imag
         </div>
         <div className="text-center flex-grow flex flex-col items-start w-full">
           <p className="text-blue-700 font-bold text-lg sm:text-xl md:text-2xl mb-1 sm:mb-2 self-center">{number}</p>
-          <p className="text-[12px] text-left sm:text-[14px] md:text-md lg:text-lg text-gray-700">{description}</p>
+          <p className="text-[12px] text-left sm:text-[14px] md:text-md lg:text-lg text-gray-700 whitespace-pre-wrap">
+          {description.split('（診察券番号は').map((part, i) => 
+            i === 1 ? (
+              <>
+                （<span className="text-[10px] sm:text-[12px] md:text-[14px] lg:text-[16px] text-gray-500">
+                  診察券番号は{part.split('）')[0]}
+                </span>）{part.split('）')[1]}
+              </>
+            ) : part
+          )}
+        </p>
         </div>
       </motion.div>
     );
@@ -108,44 +118,63 @@ const ImageTextItem = ({ imageSrc, altText, number, description, index }: { imag
     </section>
   );
 
-const IndexPage = () => {
-    const guideItems = [
+  const IndexPage = () => {
+    const guideItems1 = [
+      // 項目①から⑥までをここに入れる
+        
       {
         imageSrc: "/next.svg",
         altText: "Step 1",
         number: "①",
-        description: "LINEの『新規予約/予約状況』ボタンから進むと、上記画面に遷移します。オレンジの『予約する』ボタンを押してください。"
+        description: "『新規予約/予約状況』を押すと、当院の診察券番号を入力するフォームが表示されます。診察券代わりになりますので登録の方お願いします😊\n間違えた際は再度登録すると更新されますので、ご安心ください。"
+      },
+      {
+        imageSrc: "/スクショ５２.PNG",
+        altText: "Step 5",
+        number: "②",
+        description: "『現在の混雑状況』ボタンを押すと上記画面が表示されます。\n現在発券済みの番号\n診療中の方の番号\n現在発券した際のおおよその待ち時間が表示されます。"
       },
       {
         imageSrc:"/スクショ５２.PNG",
         altText: "Step 2",
-        number: "②",
-        description: "スクロールして、施術メニューの『このメニューを追加』ボタンを押して、『この内容で日時選択へ進む』を押してください。"
+        number: "③",
+        description: "『診察券を発券する』ボタンを押すと上記画面が表示されます。\n現在発券した場合のおおよその待ち時間を確認の上\n間に合う際は発券ボタンを押してください"
       },
       {
         imageSrc: "/スクショ５２.PNG",
         altText: "Step 3",
-        number: "③",
-        description: "予約日時を選択します。カレンダー上で⭕️となっている箇所は予約が可能です。"
-      },
-      {
-        imageSrc: "/スクショ５２.PNG",
-        altText: "Step 4",
         number: "④",
-        description: "内容をご確認の上、大丈夫であれば、『上記に同意の上、予約を確定する』を押してください。"
+        description: "発券が完了しますと、順番予約券が画面に表示されます。また、問診票もLINEに届きますの、来院前に回答お願いします📱"
       },
       {
         imageSrc: "/スクショ５２.PNG",
         altText: "Step 5",
         number: "⑤",
-        description: "予約が確定すると、マイページから自身の予約の確認やキャンセルが可能となります。"
+        description: "順番予約完了後は、『待ち時間』ボタンを押すと、\nご自身の残り待ち時間が表示されます。来院時間の参考にされ、来院までの時間を有効にご活用ください🕰️"
       },
       {
         imageSrc: "/スクショ５２.PNG",
-        altText: "Step 6",
+        altText: "Step 5",
         number: "⑥",
-        description: "予約後、LINEに確定の通知メッセージが届きます。また、施術7日前、1日前に、リマインドのメッセージが届きます。メルプ問診の記入も来院までにお願いします😊"
-      }
+        description: "来院時に、『番号表示』ボタンを押し、診察券番号（登録された方）と順番予約番号を受付でお見せください📱確定版の番号札をお渡しします😊\n（診察券番号はLINE順番予約を利用されない日でも診察券番号の確認に使えます）" 
+      },
+    ];
+  
+    const guideItems2 = [
+      // 項目⑦と⑧をここに入れる
+
+      {
+        imageSrc: "/スクショ５２.PNG",
+        altText: "Step 5",
+        number: "⑦",
+        description: "待合室のモニターにも\n現在の診療状況を番号表示しております📺\n少々お待ちいただくこともあるかと思いますが、よろしくお願いします🙇‍♂️"
+      },
+      {
+        imageSrc: "/スクショ５２.PNG",
+        altText: "Step 5",
+        number: "⑧",
+        description: "LINEの利用の有無問わず全ての患者様に番号札はお渡します。待ち時間がある際は、外出も可能です💻\nLINEから『現在の待ち状況』で診療状況を確認しつつ、再度来院ください。再来院時は受付は不要です！"
+      },
     ];
 
     return (
@@ -186,9 +215,10 @@ const IndexPage = () => {
                 
                 <AnimatedSection>
                   <div className="bg-red-100 p-4 rounded-2xl shadow-lg w-full">
-                    <h2 className="text-red-600 text-center text-lg sm:text-2xl lg:text-3xl font-bold mb-3">
-                      もう、<span className="text-xl sm:text-3xl lg:text-4xl font-extrabold underline decoration-red-500">30分待ってるのにな...</span>
-                    </h2>
+          
+                <h3 className="text-red-500 text-center text-xl sm:text-2xl lg:text-3xl font-bold mb-3">
+                  もう、<span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold decoration-red-500">ずいぶん待ってるけどあとどれくらいかな。。。と、</span>
+                </h3>
                     <Image 
                       src="/placeholder.svg" 
                       alt="Waiting Illustration" 
@@ -196,6 +226,9 @@ const IndexPage = () => {
                       height={300} 
                       className="w-full max-w-2xl mx-auto rounded-lg shadow-md"
                     />
+                    <h3 className="text-red-500 text-center text-xl sm:text-2xl lg:text-3xl font-bold mb-3">
+                  長くお待ちいただくことも多かったですが🙇‍♂️
+                </h3>
                   </div>
                 </AnimatedSection>
                 
@@ -235,14 +268,44 @@ const IndexPage = () => {
                 </div>
               </AnimatedSection>
                 
-                <AnimatedSection>
-                  <div className="bg-gradient-to-r p-1 from-blue-100 to-blue-200 p-2 rounded-2xl shadow-lg w-full">
-                    <h2 className="text-center text-xl sm:text-2xl lg:text-3xl font-bold w-full mb-4 text-blue-800">
-                      LINE予約の使い方
-                    </h2>
-                    <ImageTextGrid items={guideItems} />
-                  </div>
-                </AnimatedSection>
+              <AnimatedSection>
+              <div className="bg-gradient-to-r p-1 from-blue-100 to-blue-200 p-2 rounded-2xl shadow-lg w-full">
+                <h2 className="text-center text-xl sm:text-2xl lg:text-3xl font-bold w-full mb-4 text-blue-800">
+                  LINE予約の使い方
+                </h2>
+                <ImageTextGrid items={guideItems1} />
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection>
+              <h2 className="text-red-500 text-center text-sm sm:text-xl lg:text-2xl font-bold w-full bg-green-100 py-3 px-6 rounded-2xl shadow-lg">
+                院内での番号表示とおまけの使い方について
+              </h2>
+            </AnimatedSection>
+
+            <AnimatedSection>
+              <div className="bg-gradient-to-r p-1 from-green-100 to-green-200 p-2 rounded-2xl shadow-lg w-full">
+                <ImageTextGrid items={guideItems2} />
+              </div>
+            </AnimatedSection>
+            <AnimatedSection>
+            <div className="bg-gradient-to-r from-yellow-100 to-yellow-200 p-6 rounded-2xl shadow-lg w-full mt-8">
+              <div className="text-center">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 text-yellow-800">
+                  お困りの際は…
+                </h3>
+                <p className="text-base sm:text-lg lg:text-xl text-gray-700 mb-4">
+                  使い方がわからない際や、うまくご利用ができなかった場合も<br />
+                  お気軽にお尋ねください😊
+                </p>
+                <p className="text-base sm:text-lg lg:text-xl text-gray-700">
+                  LINEでの問い合わせやご質問など、<br />
+                  今まで通りのLINEのご利用も変わらずできますので、お願いします🙆‍♀️
+                </p>
+              </div>
+            </div>
+          </AnimatedSection>
+          
               </div>
             </div>
           </main>
