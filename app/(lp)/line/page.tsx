@@ -5,7 +5,14 @@ import Image from "next/image";
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Footer from "../../components/footer";
-
+interface ImageTextItemProps {
+  imageSrc: string;
+  altText: string;
+  number: string;
+  description: string;
+  index: number;
+  aspectRatio?: string;
+}
 
 const Circle = ({ text, index }: { text: string, index: number }) => {
     const [ref, inView] = useInView({
@@ -62,7 +69,14 @@ const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-const ImageTextItem = ({ imageSrc, altText, number, description, index }: { imageSrc: string, altText: string, number: string, description: string, index: number }) => {
+const ImageTextItem: React.FC<ImageTextItemProps> = ({ 
+  imageSrc, 
+  altText, 
+  number, 
+  description, 
+  index, 
+  aspectRatio = "3/5" 
+}) => {
     const [ref, inView] = useInView({
       triggerOnce: true,
       threshold: 0.1,
@@ -76,7 +90,7 @@ const ImageTextItem = ({ imageSrc, altText, number, description, index }: { imag
         transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 100 }}
         className="flex flex-col items-center p-2 sm:p-3 md:p-4 gap-2 sm:gap-3 md:gap-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full"
       >
-        <div className="relative w-full aspect-[3/4] rounded-lg overflow-hidden">
+        <div className={`relative w-full rounded-lg overflow-hidden`} style={{ aspectRatio }}>
           <Image
             src={imageSrc}
             alt={altText}
@@ -88,22 +102,22 @@ const ImageTextItem = ({ imageSrc, altText, number, description, index }: { imag
         <div className="text-center flex-grow flex flex-col items-start w-full">
           <p className="text-blue-700 font-bold text-lg sm:text-xl md:text-2xl mb-1 sm:mb-2 self-center">{number}</p>
           <p className="text-[12px] text-left sm:text-[14px] md:text-md lg:text-lg text-gray-700 whitespace-pre-wrap">
-          {description.split('（診察券番号は').map((part, i) => 
-            i === 1 ? (
-              <>
-                （<span className="text-[10px] sm:text-[12px] md:text-[14px] lg:text-[16px] text-gray-500">
-                  診察券番号は{part.split('）')[0]}
-                </span>）{part.split('）')[1]}
-              </>
-            ) : part
-          )}
-        </p>
+            {description.split('（診察券番号は').map((part, i) => 
+              i === 1 ? (
+                <>
+                  （<span className="text-[10px] sm:text-[12px] md:text-[14px] lg:text-[16px] text-gray-500">
+                    診察券番号は{part.split('）')[0]}
+                  </span>）{part.split('）')[1]}
+                </>
+              ) : part
+            )}
+          </p>
         </div>
       </motion.div>
     );
   };
   
-  const ImageTextGrid = ({ items }: { items: { imageSrc: string, altText: string, number: string, description: string }[] }) => (
+  const ImageTextGrid = ({ items,aspectRatio}: { items: { imageSrc: string, altText: string, number: string, description: string }[], aspectRatio: string }) => (
     <section className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 p-0 m-0 w-full">
       {items.map((item, index) => (
         <ImageTextItem
@@ -113,6 +127,7 @@ const ImageTextItem = ({ imageSrc, altText, number, description, index }: { imag
           number={item.number}
           description={item.description}
           index={index}
+          aspectRatio={aspectRatio}
         />
       ))}
     </section>
@@ -123,37 +138,37 @@ const ImageTextItem = ({ imageSrc, altText, number, description, index }: { imag
       // 項目①から⑥までをここに入れる
         
       {
-        imageSrc: "/next.svg",
+        imageSrc: "https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/d6daf083-d8f7-4547-e58f-87ea61b69700/public",
         altText: "Step 1",
         number: "①",
         description: "『新規予約/予約状況』を押すと、当院の診察券番号を入力するフォームが表示されます。診察券代わりになりますので登録の方お願いします😊\n間違えた際は再度登録すると更新されますので、ご安心ください。"
       },
       {
-        imageSrc: "/スクショ５２.PNG",
+        imageSrc: "https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/6e599460-8fd3-4589-ba46-f113b4f07600/public",
         altText: "Step 5",
         number: "②",
         description: "『現在の混雑状況』ボタンを押すと上記画面が表示されます。\n現在発券済みの番号\n診療中の方の番号\n現在発券した際のおおよその待ち時間が表示されます。"
       },
       {
-        imageSrc:"/スクショ５２.PNG",
+        imageSrc:"https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/ace14afb-9153-4f6d-cb13-2c24a98d0800/public",
         altText: "Step 2",
         number: "③",
         description: "『診察券を発券する』ボタンを押すと上記画面が表示されます。\n現在発券した場合のおおよその待ち時間を確認の上\n間に合う際は発券ボタンを押してください"
       },
       {
-        imageSrc: "/スクショ５２.PNG",
+        imageSrc: "https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/4e344bcc-720c-45c8-6327-8f95994eb700/public",
         altText: "Step 3",
         number: "④",
         description: "発券が完了しますと、順番予約券が画面に表示されます。また、問診票もLINEに届きますの、来院前に回答お願いします📱"
       },
       {
-        imageSrc: "/スクショ５２.PNG",
+        imageSrc: "https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/74b43927-aa33-4dcb-1040-bc7dda19e100/public",
         altText: "Step 5",
         number: "⑤",
         description: "順番予約完了後は、『待ち時間』ボタンを押すと、\nご自身の残り待ち時間が表示されます。来院時間の参考にされ、来院までの時間を有効にご活用ください🕰️"
       },
       {
-        imageSrc: "/スクショ５２.PNG",
+        imageSrc: "https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/fe70a85d-a16b-41d1-06a7-74591bfb7700/public",
         altText: "Step 5",
         number: "⑥",
         description: "来院時に、『番号表示』ボタンを押し、診察券番号（登録された方）と順番予約番号を受付でお見せください📱確定版の番号札をお渡しします😊\n（診察券番号はLINE順番予約を利用されない日でも診察券番号の確認に使えます）" 
@@ -164,19 +179,19 @@ const ImageTextItem = ({ imageSrc, altText, number, description, index }: { imag
       // 項目⑦と⑧をここに入れる
 
       {
-        imageSrc: "/スクショ５２.PNG",
+        imageSrc: "https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/5003b12e-6920-45d0-bacc-02847d074300/public",
         altText: "Step 5",
         number: "⑦",
         description: "待合室のモニターにも\n現在の診療状況を番号表示しております📺\n少々お待ちいただくこともあるかと思いますが、よろしくお願いします🙇‍♂️"
       },
       {
-        imageSrc: "/スクショ５２.PNG",
+        imageSrc: "https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/6e599460-8fd3-4589-ba46-f113b4f07600/public",
         altText: "Step 5",
         number: "⑧",
         description: "LINEの利用の有無問わず全ての患者様に番号札はお渡します。待ち時間がある際は、外出も可能です💻\nLINEから『現在の待ち状況』で診療状況を確認しつつ、再度来院ください。再来院時は受付は不要です！"
       },
     ];
-
+    const reservationImageUrl = "https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/9973b8be-43aa-4a91-0852-72acd290e400/public";
     return (
         <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 to-white">
 
@@ -220,7 +235,7 @@ const ImageTextItem = ({ imageSrc, altText, number, description, index }: { imag
                   もう、<span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold decoration-red-500">ずいぶん待ってるけどあとどれくらいかな。。。と、</span>
                 </h3>
                     <Image 
-                      src="/placeholder.svg" 
+                      src={reservationImageUrl}
                       alt="Waiting Illustration" 
                       width={500} 
                       height={300} 
@@ -241,8 +256,16 @@ const ImageTextItem = ({ imageSrc, altText, number, description, index }: { imag
                 <AnimatedSection>
                 <div className="bg-white p-4 sm:p-6 md:p-8 lg:p-10 rounded-2xl shadow-lg w-full">
                   <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-6 lg:space-x-8 mb-4 sm:mb-6 md:mb-8 lg:mb-10">
-                    <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 bg-yellow-200 rounded-full flex items-center justify-center">
-                      <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold">予約</span>
+                    <div className="w-48 h-20 sm:w-56 sm:h-24 md:w-64 md:h-28 lg:w-72 lg:h-32  rounded-full flex items-center justify-center">
+                    <div className="relative w-48 h-20 sm:w-56 sm:h-24 md:w-64 md:h-28 lg:w-72 lg:h-32">
+  <Image 
+    src="https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/26fa3a96-e421-4aab-f120-ee96d3711000/public"
+    alt="予約"
+    layout="fill"
+    objectFit="contain"
+    className="rounded-sm"
+  />
+</div>
                     </div>
                     <div className="flex flex-col items-center">
                       <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">それまでに</h3>
@@ -250,18 +273,34 @@ const ImageTextItem = ({ imageSrc, altText, number, description, index }: { imag
                     </div>
                   </div>
                   <div className="text-center space-y-2 mb-4 sm:mb-6 md:mb-8 lg:mb-10">
-                    <p className="text-base sm:text-lg md:text-3xl lg:text-2xl">待ち時間までにカフェ行こうかな！</p>
+                    <p className="text-base sm:text-lg md:text-3xl lg:text-2xl">待ち時間までに家のこと終わらせようかな！</p>
                     <p className="text-base sm:text-lg md:text-xl lg:text-2xl">自分のスケジュールに合わせて</p>
                     <p className="text-base sm:text-lg md:text-xl lg:text-2xl">病院受診ができる。</p>
                   </div>
                   <div className="flex justify-center space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-10 mb-4 sm:mb-6 md:mb-8 lg:mb-10">
-                    <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 bg-green-200 rounded-full flex items-center justify-center">
-                      <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold">カフェ</span>
-                    </div>
-                    <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 bg-blue-200 rounded-full flex items-center justify-center">
-                      <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold">病院</span>
+                  <div className="w-64 h-28 sm:w-72 sm:h-32 md:w-80 md:h-36 lg:w-96 lg:h-40 rounded-full flex items-center justify-center">
+                    <div className="relative w-full h-full">
+                      <Image 
+                        src="https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/80f21c25-4274-49f3-54ff-613c850fe300/public"
+                        alt="予約"
+                        layout="fill"
+                        objectFit="contain"
+                        className="rounded-sm"
+                      />
                     </div>
                   </div>
+                  <div className="w-64 h-28 sm:w-72 sm:h-32 md:w-80 md:h-36 lg:w-96 lg:h-40 rounded-full flex items-center justify-center">
+                    <div className="relative w-full h-full">
+                      <Image 
+                        src="https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/51650739-0264-4737-6f07-b3fccef77e00/public"
+                        alt="予約"
+                        layout="fill"
+                        objectFit="contain"
+                        className="rounded-sm"
+                      />
+                    </div>
+                  </div>
+                </div>
                   <div className="text-center">
                     <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-red-500 font-bold">病院での待ち時間を減らせます😊</p>
                   </div>
@@ -273,7 +312,7 @@ const ImageTextItem = ({ imageSrc, altText, number, description, index }: { imag
                 <h2 className="text-center text-xl sm:text-2xl lg:text-3xl font-bold w-full mb-4 text-blue-800">
                   LINE予約の使い方
                 </h2>
-                <ImageTextGrid items={guideItems1} />
+                <ImageTextGrid items={guideItems1} aspectRatio="3/5" />
               </div>
             </AnimatedSection>
 
@@ -285,7 +324,7 @@ const ImageTextItem = ({ imageSrc, altText, number, description, index }: { imag
 
             <AnimatedSection>
               <div className="bg-gradient-to-r p-1 from-green-100 to-green-200 p-2 rounded-2xl shadow-lg w-full">
-                <ImageTextGrid items={guideItems2} />
+                <ImageTextGrid items={guideItems2} aspectRatio="6/9" />
               </div>
             </AnimatedSection>
             <AnimatedSection>
