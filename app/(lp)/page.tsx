@@ -257,7 +257,7 @@ export default function IndexPage() {
                     imageSrc="https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/41cecafc-bc50-4059-e357-7737aec2ce00/public"
                     altText="Step 1"
                     number="①"
-                    description="下記の登録画面へ進むボタンを押すと、上記のような画面が表示されます"
+                    description="下記『このまま登録画面に進む』ボタンを押すと、上記のような画面が表示されます"
                   />
                 </div>
                 <div className="col-span-1">
