@@ -254,7 +254,7 @@ export default function IndexPage() {
               <div className="grid grid-cols-2 gap-2 sm:gap-4 w-full max-w-3xl mx-auto">
                 <div className="col-span-1">
                   <ImageTextItem
-                    imageSrc="https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/8432ce5b-bc53-4f0e-5ea0-e686a2e3f700/public"
+                    imageSrc="https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/41cecafc-bc50-4059-e357-7737aec2ce00/public"
                     altText="Step 1"
                     number="①"
                     description="下記の登録画面へ進むボタンを押すと、上記のような画面が表示されます"
@@ -262,7 +262,7 @@ export default function IndexPage() {
                 </div>
                 <div className="col-span-1">
                   <ImageTextItem
-                    imageSrc="/新１のコピー２.PNG"
+                    imageSrc="https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/9583d394-5c29-49b9-222a-0fca7d670200/public"
                     altText="Step 2"
                     number="②"
                     description="上記の空欄を埋めてください。"
@@ -304,37 +304,37 @@ export default function IndexPage() {
             <AnimatedSection>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 w-full">
                 <ImageTextItem
-                  imageSrc="/スクショ３２.PNG"
+                  imageSrc="https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/c3a52053-606d-4614-f5fd-5efde81f9400/public"
                   altText="Step 1"
                   number="①"
                   description="LINEの『新規予約/予約状況』ボタンから進むと、上記画面に遷移します。オレンジの『予約する』ボタンを押してください。"
                 />
                 <ImageTextItem
-                  imageSrc="/スクショ４２.PNG"
+                  imageSrc="https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/55b8bf95-d58d-41f5-2eb6-212cbdbd2a00/public"
                   altText="Step 2"
                   number="②"
                   description="スクロールして、施術メニューの『このメニューを追加』ボタンを押して、『この内容で日時選択へ進む』を押してください。"
                 />
                 <ImageTextItem
-                  imageSrc="/スクショ５２.PNG"
+                  imageSrc="https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/73b08a7c-d008-41d5-a0d2-29d1438cfc00/public"
                   altText="Step 3"
                   number="③"
                   description="予約日時を選択します。カレンダー上で⭕️となっている箇所は予約が可能です。"
                 />
                 <ImageTextItem
-                  imageSrc="/スクショ６２.PNG"
+                  imageSrc="https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/693e0194-e897-41c2-9e58-73c667e91200/public"
                   altText="Step 4"
                   number="④"
                   description="内容をご確認の上、大丈夫であれば、『上記に同意の上、予約を確定する』を押してください。"
                 />
                 <ImageTextItem
-                  imageSrc="/スクショ７.png"
+                  imageSrc="https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/829be68c-22b9-4dd1-6b68-abcea92dc000/public"
                   altText="Step 5"
                   number="⑤"
                   description="予約が確定すると、マイページから自身の予約の確認やキャンセルが可能となります。"
                 />
                 <ImageTextItem
-                  imageSrc="/スクショ８２.PNG"
+                  imageSrc="https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/89624dd1-591c-4b84-ba00-4c71c0fc7e00/public"
                   altText="Step 6"
                   number="⑥"
                   description="予約後、LINEに確定の通知メッセージが届きます。また、施術7日前、1日前に、リマインドのメッセージが届きます。メルプ問診の記入も来院までにお願いします😊"
