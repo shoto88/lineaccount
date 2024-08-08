@@ -141,7 +141,7 @@ const ImageTextItem: React.FC<ImageTextItemProps> = ({
         imageSrc: "https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/d6daf083-d8f7-4547-e58f-87ea61b69700/public",
         altText: "Step 1",
         number: "①",
-        description: "『新規予約/予約状況』を押すと、当院の診察券番号を入力するフォームが表示されます。診察券代わりになりますので登録の方お願いします😊\n間違えた際は再度登録すると更新されますので、ご安心ください。"
+        description: "『診察券　番号登録』を押すと、当院の診察券番号を入力するフォームが表示されます。診察券代わりになります。😊\n間違えた場合も再度登録すると更新されます📱"
       },
       {
         imageSrc: "https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/6e599460-8fd3-4589-ba46-f113b4f07600/public",
@@ -162,16 +162,16 @@ const ImageTextItem: React.FC<ImageTextItemProps> = ({
         description: "発券が完了しますと、順番予約券が画面に表示されます。また、問診票もLINEに届きますの、来院前に回答お願いします📱"
       },
       {
-        imageSrc: "https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/74b43927-aa33-4dcb-1040-bc7dda19e100/public",
+        imageSrc: "https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/14b6ffd0-570f-4316-f3ac-991cb1b12900/public",
         altText: "Step 5",
         number: "⑤",
-        description: "順番予約完了後は、『待ち時間』ボタンを押すと、\nご自身の残り待ち時間が表示されます。来院時間の参考にされ、来院までの時間を有効にご活用ください🕰️"
+        description: "順番予約完了後は、『待ち番号一覧』ボタンを押すと、\n現在診療待ちの番号一覧が表示されます。来院の参考にご活用ください🕰️"
       },
       {
         imageSrc: "https://imagedelivery.net/62NdOt7RZaAeX8DsUaXPcg/fe70a85d-a16b-41d1-06a7-74591bfb7700/public",
         altText: "Step 5",
         number: "⑥",
-        description: "来院時に、『番号表示』ボタンを押し、診察券番号（登録された方）と順番予約番号を受付でお見せください📱確定版の番号札をお渡しします😊\n（診察券番号はLINE順番予約を利用されない日でも診察券番号の確認に使えます）" 
+        description: "来院時後『番号表示』ボタンを押し、診察券番号（登録された方）と順番予約番号を受付でお見せください📱確定版の番号札をお渡しします😊\n（単に診察券代わりとしてもご利用いただけます。）" 
       },
     ];
   
